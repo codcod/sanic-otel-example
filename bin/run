@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+PYTHONPATH=. poetry run sanic bookstore.server \
+    --host=0.0.0.0 \
+    --port=1337 \
+    $1
+
+# vim: ft=sh:sw=4:et:ai
