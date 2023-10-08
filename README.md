@@ -28,6 +28,15 @@ In a separate terminal:
     $ make k6
     $ make prom-stop
 
+Linux users: replace in `docker/prometheus.yml`:
+
+    - targets: ['host.docker.internal:1337']
+
+with:
+
+    - targets: ['127.0.0.1:1337']
+
+
 Result:
 
 ![Prometheus](docs/prometheus.png)
