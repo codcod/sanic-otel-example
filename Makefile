@@ -19,15 +19,18 @@ fix:
 	poetry run black bookstore
 	poetry run flake8 bookstore
 	poetry run pylint bookstore/**
+	poetry run mypy bookstore
+	poetry run ruff bookstore
 
 run:
 	rm -rf .instance
 	mkdir .instance
 
-	MULTIPROC=no PROMETHEUS_MULTIPROC_DIR=.instance ./bin/run \
-		--dev \
-		--no-access-logs \
-		--workers=1
+	PROMETHEUS_MULTIPROC_DIR=$(CURDIR)/.instance \
+	LOGGING_LEVEL=DEBUG \
+	ENVIRONMENT=local \
+	    ./bin/run \
+		--workers=2
 
 prom-start:
 	./bin/docker-prometheus.sh
