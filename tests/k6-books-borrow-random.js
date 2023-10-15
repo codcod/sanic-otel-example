@@ -6,7 +6,7 @@ export const options = {
 };
 
 export default function () {
-    const url = 'http://127.0.0.1:1337/book/borrow-random';
+    const url = 'http://127.0.0.1:1337/book/borrow';
 
     const params = {
         headers: {

@@ -1,16 +1,18 @@
 Sanic OpenTelemetry example
 ===========================
 
-Sanic application uses OpenTelemetry Metrics and exports it directly to
+Sanic application that uses Prometheus Metrics API directly to export data to
 Prometheus.
 
-Issues:
+Next step would be to replace Prometheus calls with OpenTelemetry ones:
+* opentelemetry-api
+* opentelemetry-sdk
+* opentelemetry-propagator-b3
+* opentelemetry-exporter-prometheus
 
-* Does not collect metrics when multiple workers. More info: [Prometheus
-  Client: FastAPI + Gunicorn](https://github.com/prometheus/client_python#fastapi--gunicorn).
-  
-  To use multiple workers set `MULTIPROC=yes` and `--workers=2` when running
-  the Sanic server (`make run`).
+Libraries to install then:
+
+    $ poetry add opentelemetry-{api,sdk,propagator-b3,exporter-prometheus}
 
 
 Development
