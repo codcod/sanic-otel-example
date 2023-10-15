@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-PYTHONPATH=. poetry run sanic bookstore.server \
+PYTHONPATH=. poetry run sanic bookstore.server:app \
     --host=0.0.0.0 \
     --port=1337 \
     $1

@@ -1,13 +1,13 @@
+import typing as tp
 from importlib import import_module
 from inspect import getmembers
 from types import ModuleType
-from typing import Union
 
 from sanic.blueprints import Blueprint
 from sanic.blueprints import BlueprintGroup
 
 
-def autodiscovery(app, *module_names: Union[str, ModuleType]):
+def autodiscovery(app, *module_names: tp.Union[str, ModuleType]):
     mod = app.__module__
     blueprints = set()
 

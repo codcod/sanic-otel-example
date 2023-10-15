@@ -1,11 +1,13 @@
 __pycache__/
 *.py[cod]
-.venv/
-venv/
 
-.instance
-.coverage
+.venv/
+
+.instance/
 .mypy_cache/
+.ruff_cache/
+
+dist/
 
 *.log
 
